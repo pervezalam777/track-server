@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "4cf20d88-9325-4560-b3da-f15a3c2ca473",
+		"name": "Track-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"pervezalam007@gmail.com\",\n\t\"password\":\"testing123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "root-with-auth-token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZThjNjU3ZmY4ZmNkNDBiNWMwOTE2NDgiLCJlbWFpbCI6InBlcnZlemFsYW03N0BnbWFpbC5jb20iLCJpYXQiOjE1ODYyNTkzMjd9.TAk3ezIguXObXDlJLnm_hstz3f0fcKeoMzalI_Dglwk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "root-without-auth-token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "root-with-fake-auth-token-key",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZThjNjU3ZmY4ZmNkNDBiNWMwOTE2NDgiLCJlbWFpbCI6InBlcnZlemFsYW03N0BnbWFpbC5jb20iLCJpYXQiOjE1ODYyNTkzMjd9.Jn2RooAYtr24ZuWXwBOg4k_JyjWm2q6hr2kNX8MM0MY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "root-with-fake-user-id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ZThjNjU3ZmY4ZmNkNDBiNWMwOTE2NDgiLCJlbWFpbCI6InBlcnZlemFsYW03N0BnbWFpbC5jb20iLCJpYXQiOjE1ODYyNTkzMjd9.g-dCQvoA1xujBHtaIHjB_3TcW3Kc1dt7IF0kfvgXLEM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin-with-encrypted-password-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"pervezalam007@gmail.com\",\n\t\"password\":\"testing123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin-with-non-encrypted-password-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"pervezalam7777@gmail.com\",\n\t\"password\":\"testing123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin-without-login-details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tracks-fetch",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZThjOTBlMTRiMDY1MjViYjQ1ZWRmNjQiLCJlbWFpbCI6InBlcnZlemFsYW0wMDdAZ21haWwuY29tIiwiaWF0IjoxNTg2MzI1ODcwfQ.IwReIrFmU74fIN3X0B8INgNU4EAObmK_AegHmn1bCgk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/tracks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tracks - post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZThjOTBlMTRiMDY1MjViYjQ1ZWRmNjQiLCJlbWFpbCI6InBlcnZlemFsYW0wMDdAZ21haWwuY29tIiwiaWF0IjoxNTg2MzI1ODcwfQ.IwReIrFmU74fIN3X0B8INgNU4EAObmK_AegHmn1bCgk",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"My new track\",\n\t\"locations\": [\n\t\t{\n\t\t\t\"timestamp\":1586329297765,\n\t\t\t\"coords\": {\n\t\t\t\t\"latitude\":28.5221,\n\t\t\t    \"longitude\":77.2102,\n\t\t\t    \"altitude\":100,\n\t\t\t    \"accuracy\":100,\n\t\t\t    \"heading\":100,\n\t\t\t    \"speed\":100\n\t\t\t}\n\t\t}\n\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/tracks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
